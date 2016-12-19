@@ -1,0 +1,62 @@
+JavaScript30 Notes
+
+//Shoulda started with day 1 but didn't it's day 4 now lol ;)
+
+Day 4
+1. Array.prototype.filter()
+	returns the things in an array with specified properties
+	you would do like
+	
+	const filteredArray = items.filter(function(item) {
+		if(attributes and values to filter on) {
+			return true;
+		}
+	});
+	
+	Ok so I guess because that only returns true/false you could also do like...
+	
+	const filteredArray = items.filter(item => item.attributes and values to filter on);
+	
+2. console.table
+	super dope!  it's like console.log but for objects and returns a table with the objects' attributes :-)
+	
+3. =>
+	okay so I'm sure there's more to it but basically => creates a function, it kind of implies the word function around the word before it and also the word return before (or after) the next argument
+	
+	so..
+	var materialsLength1 = materials.map(function(material){
+		return material.length
+	});
+	==
+	var materialsLength2 = materials.map(material => material.length);
+	
+4. Array.prototype.map()
+	-maps over an array and returns an array of the same length
+	
+5. Array.prototype.sort()
+	evaluates 2 values in an array and based on a conditional returns 1 or -1. This causes the sorting, I don't really understand how.
+	things.sort((a, b) => a.value > b.value ? 1 : -1);
+	
+6. Array.prototype.reduce()
+	Allow you to build something on every value in the array
+	-it gives you your running total or what you've returned from each time through
+	-it replaces something like this
+		totalThings = 0;
+		for (i = 0; i < things.length; i++)
+		{
+			totalThings += things[i];
+		}
+		console.log(totalThings);
+	
+	or whatever.
+	
+	so you would do like... 
+		const totalThings = things.reduce((total, thing) => {
+			return total + (thing);
+		}, 0);
+	and that , 0 part is because the first time you run through there is no total.
+	
+7. querySelector
+	Well, I don't understand it that fully yet, but it basically looks through the DOM for the item you want.  You use querySelector when you want to find one item and querySelectorAll when you want to return a list.  Also, it returns as a node list, not an array.
+
+	
